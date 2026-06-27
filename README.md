@@ -59,7 +59,7 @@ Data has been collected from the following real-world platforms:
 - **ML Libraries:** scikit-learn, TensorFlow / Keras, XGBoost, statsmodels
 - **Data Processing:** Pandas, NumPy
 - **Visualisation:** Matplotlib, Seaborn, Plotly
-- **Notebook Environment:** Jupyter Notebook / Google Colab
+- **Notebook Environment:** Jupyter Notebook / Google Collab
 - **Version Control:** Git and GitHub
 
 ---
