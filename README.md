@@ -48,7 +48,7 @@ Data has been collected from the following real-world platforms:
 - **NASA GRACE Satellite Data** — Groundwater storage anomaly data
 - **IMD (India Meteorological Department)** — Rainfall data for correlation
 - **data.gov.in** — Open government datasets
-
+- **NWDP/NWIC Telemetry** -Six-hourly rainfall, river stage and water-level observations.(https://nwdp.nwic.gov.in/)
 > Dataset spans approximately 2004 to 2024 (20 years historical), with predictions extending to 2044.
 
 ---
