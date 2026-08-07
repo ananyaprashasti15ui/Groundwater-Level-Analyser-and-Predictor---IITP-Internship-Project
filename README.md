@@ -1,152 +1,299 @@
-# Groundwater-Level-Analyser-and-Predictor-IITP-Internship Project
+# Groundwater Level Analyzer and Predictor
 
+Machine Learning-based Groundwater Level Forecasting System
 
-> An ML-powered system for analysing historical groundwater trends and forecasting future levels, developed as part of the IITP Internship Project.
+An end-to-end Machine Learning project developed during the IIT Patna Internship Program to analyze historical groundwater data, perform exploratory data analysis, engineer temporal features, and predict future groundwater levels using multiple Machine Learning and Deep Learning models.
 
 ---
 
 ## Overview
 
-This project analyses 20 years of historical groundwater data and predicts groundwater levels for the next 20 years using multiple Machine Learning algorithms. It is designed to support water resource management, agricultural planning, and environmental policy decisions.
+Groundwater is one of the most important freshwater resources and plays a crucial role in agriculture, industry, and domestic consumption. Accurate prediction of groundwater levels enables better water resource planning, sustainable groundwater management, and informed policy decisions.
 
-The system integrates data from real-world platforms and government datasets to ensure predictions are grounded in authentic measurements.
+This project presents a comprehensive Machine Learning pipeline that analyzes historical groundwater observations collected from official Government of India datasets. The workflow includes data preprocessing, exploratory data analysis, feature engineering, model training, model evaluation, and groundwater level forecasting using multiple Machine Learning and Deep Learning algorithms.
 
----
-
-## Key Features
-
-- **Historical Analysis** — Visualises and analyses groundwater trends over the past 20 years
-- **Future Prediction** — Forecasts groundwater levels for the next 20 years
-- **Multiple ML Algorithms** — Compares performance across several models to find the best fit
-- **Real Dataset Integration** — Uses data sourced from authentic government and environmental platforms
-- **Interactive Visualisations** — Plots and graphs for both historical and predicted data
-- **Location-based Analysis** — Supports region and station-wise groundwater level tracking
+The objective of this project is to compare different predictive models and identify the most accurate approach for groundwater level prediction.
 
 ---
 
-## ML Algorithms Used
+## Objectives
 
-| Algorithm | Use Case |
-|---|---|
-| Linear Regression | Baseline trend prediction |
-| Random Forest | Non-linear pattern detection |
-| Support Vector Machine (SVM) | High-dimensional data handling |
-| LSTM (Long Short-Term Memory) | Time-series sequential forecasting |
-| XGBoost | High-accuracy ensemble prediction |
-| ARIMA / SARIMA | Statistical time-series forecasting |
-
-> Models are evaluated using metrics such as RMSE, MAE, and R-squared Score to select the best performer. 
+- Analyze historical groundwater monitoring data.
+- Perform Exploratory Data Analysis (EDA).
+- Engineer temporal and geographical features.
+- Train and compare multiple Machine Learning models.
+- Evaluate model performance using standard regression metrics.
+- Predict future groundwater levels with high accuracy.
 
 ---
 
-## Dataset Sources
-
-Data has been collected from the following real-world platforms:
-
-- **Central Ground Water Board (CGWB)** — [cgwb.gov.in](https://cgwb.gov.in)
-- **India-WRIS (Water Resources Information System)** — [indiawris.gov.in](https://indiawris.gov.in)
-- **NASA GRACE Satellite Data** — Groundwater storage anomaly data
-- **IMD (India Meteorological Department)** — Rainfall data for correlation
-- **data.gov.in** — Open government datasets
-- **NWDP/NWIC Telemetry** -Six-hourly rainfall, river stage and water-level observations.(https://nwdp.nwic.gov.in/)
-> Dataset spans approximately 2004 to 2024 (20 years historical), with predictions extending to 2044.
-
----
-
-## Tech Stack
-
-- **Language:** Python 3.x
-- **ML Libraries:** scikit-learn, TensorFlow / Keras, XGBoost, statsmodels
-- **Data Processing:** Pandas, NumPy
-- **Visualisation:** Matplotlib, Seaborn, Plotly
-- **Notebook Environment:** Jupyter Notebook / Google Collab
-- **Version Control:** Git and GitHub
-
----
-
-## Project Structure
+## Project Workflow
 
 ```
-Groundwater-Level-Analyser-and-Predictor---IITP-Internship-Project/
-|
-|-- data/
-|   |-- raw/                  # Original datasets from platforms
-|   |-- processed/            # Cleaned and preprocessed data
-|
-|-- notebooks/
-|   |-- 01_EDA.ipynb          # Exploratory Data Analysis
-|   |-- 02_Preprocessing.ipynb
-|   |-- 03_Model_Training.ipynb
-|   |-- 04_Prediction_and_Visualisation.ipynb
-|
-|-- models/
-|   |-- saved_models/         # Trained and serialised models
-|
-|-- outputs/
-|   |-- plots/                # Generated charts and graphs
-|   |-- predictions/          # Predicted groundwater level CSVs
-|
-|-- src/
-|   |-- preprocess.py
-|   |-- train.py
-|   |-- predict.py
-|
-|-- requirements.txt
-|-- README.md
+Government Data Sources
+        │
+        ▼
+Data Collection
+        │
+        ▼
+Data Preprocessing
+        │
+        ▼
+Exploratory Data Analysis
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Model Training
+        │
+        ▼
+Model Evaluation
+        │
+        ▼
+Groundwater Level Prediction
 ```
 
 ---
 
-## Getting Started
+## Dataset Description
 
-### 1. Clone the Repository
+The project utilizes historical groundwater monitoring data collected from official Government of India sources.
 
-```bash
-git clone https://github.com/<your-username>/Groundwater-Level-Analyser-and-Predictor---IITP-Internship-Project.git
-cd Groundwater-Level-Analyser-and-Predictor---IITP-Internship-Project
-```
+The dataset contains:
 
-### 2. Install Dependencies
+- Groundwater Level
+- Observation Station
+- State
+- District
+- Latitude
+- Longitude
+- Observation Date
+- Rainfall Information
+- Population Data
+- Seasonal Features
 
-```bash
-pip install -r requirements.txt
-```
+Approximately two decades of historical observations were used for analysis and forecasting.
 
-### 3. Run the Notebooks
+---
 
-Open Jupyter Notebook or upload to Google Colab and run notebooks in order from 01 to 04.
+## Data Preprocessing
+
+The preprocessing pipeline includes:
+
+- Missing value handling
+- Duplicate record removal
+- Date-time processing
+- Outlier analysis
+- Feature scaling
+- Train-test splitting
+- Feature selection
+
+---
+
+## Exploratory Data Analysis
+
+The following analyses were performed:
+
+- Correlation Matrix
+- Monthly Groundwater Distribution
+- Latitude Distribution
+- Longitude Distribution
+- District-wise Groundwater Analysis
+- Histograms
+- Scatter Plots
+- Boxplots
+
+These analyses helped understand spatial, seasonal, and temporal groundwater patterns.
+
+---
+
+## Feature Engineering
+
+The following engineered features were created:
+
+- Lag Features
+- Rolling Mean
+- Rolling Standard Deviation
+- Month
+- Season
+- Year
+- Latitude
+- Longitude
+- Population-based Features
+
+---
+
+## Machine Learning Models
+
+The following models were implemented and evaluated:
+
+- Random Forest
+- XGBoost
+- LightGBM
+- CatBoost
+- LSTM
+- Ensemble Model
+- Persistence Baseline
+
+---
+
+## Performance Metrics
+
+Models were evaluated using:
+
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Error (MAE)
+- R² Score
+- Mean Absolute Percentage Error (MAPE)
+- Training Time
 
 ---
 
 ## Results
 
-- Achieved strong prediction accuracy across multiple ML models
-- LSTM showed the best performance for long-term time-series forecasting
-- Historical trends revealed seasonal fluctuations and declining water table levels in several regions
-- Predictions up to 2044 highlight potential water stress zones
+| Model | RMSE | MAE | R² Score |
+|--------|------|------|----------|
+| XGBoost | **0.2729** | **0.0895** | **1.0000** |
+| LightGBM | 0.2762 | 0.0905 | 1.0000 |
+| CatBoost | 0.2766 | 0.0916 | 1.0000 |
+| Ensemble | 0.2770 | 0.0883 | 1.0000 |
+| Random Forest | 0.2865 | 0.0913 | 1.0000 |
+| LSTM | 0.3100 | 0.1004 | 1.0000 |
+
+**Best Performing Model:** XGBoost
 
 ---
 
-## Internship Details
+## Technologies Used
 
-| Field | Details |
-|---|---|
-| **Institution** | IIT Patna (IITP) |
-| **Project Type** | Internship Project |
-| **Domain** | Machine Learning / Environmental Data Science |
-| **Focus Area** | Groundwater Level Analysis and Prediction |
+- Python
+- Jupyter Notebook
+- Visual Studio Code
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- LightGBM
+- CatBoost
+- TensorFlow / Keras
+- Matplotlib
+- Seaborn
 
 ---
 
-## Contributing
+## Data Sources
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+The datasets used in this project were obtained from official Government of India portals.
+
+### Central Ground Water Board (CGWB)
+
+Groundwater monitoring reports and groundwater resource data.
+
+https://cgwb.gov.in/
+
+Dynamic Ground Water Resources Report
+
+https://cgwb.gov.in/cgwbpnm/public/uploads/documents/1743584819841710360file.pdf
+
+---
+
+### National Water Informatics Centre (NWIC)
+
+Groundwater telemetry observation data.
+
+https://nwdp.nwic.gov.in/
+
+---
+
+### India Climate & Energy Dashboard (NITI Aayog ICED)
+
+Climate and environmental datasets.
+
+https://iced.niti.gov.in/
+
+---
+
+### Population Dataset
+
+Population statistics collected from publicly available Government of India census data.
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/ananyaprashasti15ui/Groundwater-Level-Analyser-and-Predictor---IITP-Internship-Project.git
+```
+
+Install the required packages
+
+```bash
+pip install -r requirements.txt
+```
+
+Run Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+---
+
+## Team Members
+
+This project was developed collaboratively during the IIT Patna Internship Program.
+
+| Name | Registration Number | Institution |
+|------|---------------------|-------------|
+| **Ananya Prashasti** | — | SRM Institute of Science and Technology |
+| **Raj Vardhan Jha** | 24190503043 | Central University of Jharkhand |
+| **Sawan Ade** | 24013 | Indian Institute of Science Education and Research (IISER), Bhopal |
+| **Akshat Ojha** | 24EJCIT019 | Jaipur Engineering College & Research Centre (Foundation) |
+| **Akshay Singh** | 24EJCIT021 | Jaipur Engineering College & Research Centre (Foundation) |
+
+---
+
+## Academic Guidance
+
+This project was carried out under the guidance of
+
+**Dr. Rahul Misra**  
+Professor  
+Indian Institute of Technology (IIT) Patna
+
+---
+
+## Future Scope
+
+Possible future enhancements include:
+
+- Integration of real-time groundwater monitoring data
+- Weather and rainfall forecasting integration
+- GIS-based groundwater visualization
+- Web dashboard using Streamlit
+- Mobile application deployment
+- Transformer-based deep learning models
+- Multi-state groundwater forecasting
+
+---
+
+## Acknowledgements
+
+The team sincerely acknowledges the support and guidance provided by **Dr. Rahul Misra**, Professor, IIT Patna, throughout the internship.
+
+We also thank the following organizations for providing valuable datasets and resources:
+
+- Indian Institute of Technology Patna
+- Central Ground Water Board (CGWB)
+- National Water Informatics Centre (NWIC)
+- NITI Aayog – India Climate & Energy Dashboard (ICED)
+- Open Source Python Community
 
 ---
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE).
-
-
-> "Water is the driving force of all nature." — Leonardo da Vinci
+This repository is intended for academic, educational, and research purposes.
