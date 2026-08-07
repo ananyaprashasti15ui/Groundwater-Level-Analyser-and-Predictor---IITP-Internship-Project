@@ -248,7 +248,7 @@ This project was developed collaboratively during the IIT Patna Internship Progr
 
 | Name | Registration Number | Institution |
 |------|---------------------|-------------|
-| **Ananya Prashasti** | — | SRM Institute of Science and Technology |
+| **Ananya Prashasti** | RA2411004010198 | SRM Institute of Science and Technology |
 | **Raj Vardhan Jha** | 24190503043 | Central University of Jharkhand |
 | **Sawan Ade** | 24013 | Indian Institute of Science Education and Research (IISER), Bhopal |
 | **Akshat Ojha** | 24EJCIT019 | Jaipur Engineering College & Research Centre (Foundation) |
